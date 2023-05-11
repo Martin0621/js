@@ -23,13 +23,22 @@
         }
 
         #tip {
-            color: red;
+            color: rgb(194, 182, 182);
             display: none;
         }
 
         #result {
             color: green;
             display: none;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        #myBtn {
+            color: rgb(249, 5, 5);
+
+            font-size: 50px;
+            text-align: center;
         }
     </style>
 </head>
@@ -47,12 +56,17 @@
         <button type="button" id="myBtn" onclick="myBtnFun()">計算加總</button>
     </div>
     <HR>
-    <div id="tip">請輸入二個數值 計算加總
+    <div id="tip">請輸入二個數值 計算加總<br>
+        *僅可輸入數字
         <P id="result">
-            1000
+
         </P>
     </div>
     <script>
+        function resetFun(){
+            window.location.reload();
+        }
+        // myBtn.innerText = 'NG';
         function myBtnFun() {
 
             let num1Value = num1.value;
@@ -68,7 +82,7 @@
 
             // result.innerText = '55688';
             result.innerText = resultValue;
-
+            myBtn.innerText = 'NG';
             // tip.style.display = 'none';
             // result.style.display = 'block';
 
@@ -77,7 +91,7 @@
         let num1 = document.getElementById('num1');
         let num2 = document.getElementById('num2');
 
-        
+
         let tip = document.getElementById('tip');
         let result = document.getElementById('result');
         let myBtn = document.getElementById('myBtn');
