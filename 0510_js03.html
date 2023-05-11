@@ -9,19 +9,16 @@
 </head>
 
 <body>
-    <p>
-        <label for="name">name</label>
-        <input type="text" id="name" value="">
-    </p>
-    <p>
-        <label for="mobile">mobile</label>
-        <input type="text" id="mobile" value="">
-    </p>
-    <p>
-        <button type="button" id="myBtn" onclick="myFun()">GET-BTN</button>
-    </p>
+           <div class="">
+            <label for="A">A</label>
+            <input type="text" id="A" value="">
+        </div>
+        <div class="">
+            <label for="B">B</label>
+            <input type="text" id="B" value="">
+        </div>
+            <button type="button" id="myBtn" onclick="myFun()">GET-BTN</button>
     <HR>
-    <P>輸入資料</P>
     <P id="result">
         結果是....
     </P>
@@ -31,17 +28,18 @@
         // mobileText = document.getElementById('mobile').value '0911-222-333';
 
         // get
-        let nameText = document.getElementById('name');
-        let mobileText = document.getElementById('mobile');
+        let A = document.getElementById('A');
+        let B = document.getElementById('B');
         let myBtn = document.getElementById('myBtn');
         let resul = document.getElementById('resul');
         function myFun() {
-            let nameTextValue = nameText.value;
-            let mobileTextValue = mobileText.value;
+            let AValue = 10;
+            let BValue = 200;
             // console.log('myFun');
-            console.log(nameTextValue);
-            console.log(mobileTextValue);
-            result.innerText = `您好 選的是 ${nameTextValue} ${mobileTextValue}`;
+            console.log(A);
+            console.log(B);
+            // result.innerText = `${ATextValue} ${BTextValue}`;
+            result.innerText = ` ${BValue}`;
         }
 
         
