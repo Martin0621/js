@@ -9,15 +9,32 @@
     <style>
         * {
             box-sizing: border-box;
+            border-radius: 20px;
+            font-size: 25px;
+            font-family: "標楷體";
         }
 
         .container,
         #type {
-            /* margin:auto; */
             text-align: center;
-            margin-bottom: 30px;
-            margin-top: 50px;
-            /* background-color: lightblue;             */
+            margin: 30px 800px;
+            background-color: rgb(249, 205, 232);
+        }
+
+        .btn {
+            text-align: center;
+            background-color: rgb(198, 248, 248);
+            color: darkblue;
+            width: 200px;
+            height: 50px;
+        }
+
+        .opt {
+            text-align: center;
+            background-color: rgb(163, 246, 246);
+            color: red;
+            font-weight: 1000;
+            width: 80px;
         }
 
         .row {
@@ -26,22 +43,22 @@
         }
 
         #tip {
-            color: rgb(194, 182, 182);
+            color: rgb(100, 122, 2);
             display: none;
+            text-align: center;
         }
 
         .box1 {
-
-
-            font-size: 20px;
             text-align: center;
         }
 
         #result {
             color: green;
             display: none;
-            font-size: 50px;
+            font-size: 70px;
             text-align: center;
+            background-color: rgb(195, 195, 250);
+            margin: 30px 600px;
         }
 
         #myBtn,
@@ -50,9 +67,9 @@
         #乘,
         #除 {
             color: rgb(249, 5, 5);
-
-            font-size: 20px;
+            font-size: 40px;
             text-align: center;
+            margin-bottom: 30px;
         }
     </style>
 </head>
@@ -60,78 +77,56 @@
 <body>
     <div class="container">
         <div class="row">
-            <label for="num1">num1</label>
-            <input type="text" id="num1" value="">
+            <label for="num1"></label><br>
+            <input class="btn" type="text" id="num1" value="0">
         </div>
         <div class="row">
-            <label for="num2">num2</label>
-            <input type=" text" id="num2" value="">
-        </div>
-        <!-- <div class="row">
-            <label for="opt">符號</label>
-            <input type=" text" id="opt" value="">
-        </div> -->
-        <div class="row">
-            <label for="opt">符號：</label>
-            <select id="opt" name="opt" value="">
+            <label for="opt"></label><br>
+            <select class="opt" id="opt" name="opt" value="">
                 <option value="+">+</option>
                 <option value="-">-</option>
                 <option value="*">*</option>
                 <option value="/">/</option>
             </select>
-
         </div>
-        <button type="button" id="myBtn" onclick="resetFun();">Reset</button>
-        <div></div>
+        <div class="row">
+            <label for="num2"></label><br>
+            <input class="btn" type=" text" id="num2" value="0">
+        </div>
+        <button type="button" id="myBtn" onclick="resetFun();">Ac</button>
         <button type="button" id="myBtn" onclick="myBtnFun();">=</button>
+        <br>
         <button type="button" id="加" onclick="加Fun()">+</button>
         <button type="button" id="減" onclick="減Fun()">-</button>
         <button type="button" id="乘" onclick="乘Fun()">*</button>
         <button type="button" id="除" onclick="除Fun()">/</button>
     </div>
-    <div class="box1">
-        <div>
-            <button type="button" id="一" onclick="一Fun()" value="1">1</button>
-            <button type="button" id="二" onclick="二Fun()" value="2">2</button>
-            <button type="button" id="三" onclick="三Fun()" value="3">3</button>
-        </div>
-        <div>
-            <button type="button" id="四" onclick="四Fun()" value="4">4</button>
-            <button type="button" id="五" onclick="五Fun()" value="5">5</button>
-            <button type="button" id="六" onclick="六Fun()" value="6">6</button>
-        </div>
-        <div>
-            <button type="button" id="七" onclick="七Fun()" value="7">7</button>
-            <button type="button" id="八" onclick="八Fun()" value="8">8</button>
-            <button type="button" id="九" onclick="九Fun()" value="9">9</button>
-        </div>
-        <div>
-            <button type="button" id="零" onclick="零Fun()" value="0">0</button>
-        </div>
-    </div>
     <HR>
     <div id="tip">請輸入二個數值 計算加總<br>
         *僅可輸入數字
         <P id="result">
-          
+            0
         </P>
     </div>
+
+    
     <script>
         function myBtnFun() {
 
             // 1.get input value
-            // 抓到num1.value
+            // 抓num1.value
             let num1Value = num1.value;
-            // 抓到num2.value
+            // 抓num2.value
             let num2Value = num2.value;
-            // 抓到opt.value
+            // 抓opt.value
             let optValue = opt.value;
 
             // console.log('num1Value', num1Value);
             // console.log('num2Value', num2Value);
             // console.log('optValue', optValue);
 
-            // 2.判斷 opt.value + - * /
+            // opt.value + - * /
+
             let resultValue = 0;
             switch (optValue) {
                 case '+':
@@ -153,45 +148,19 @@
             }
             console.log('resultValue', resultValue);
 
-            // 3. + ....
-            //    - ....
-            //    * ....
-            //    / ....
-
-            // 1.get input value
-            // 抓到num1.value
-            // 抓到num2.value
-            // 抓到opt.value
-
-            // 2.判斷 opt.value + - * /
-
-            // 3. + ....
-            //    - ....
-            //    * ....
-            //    / ....
-
-
-
+            // get input value
+            // 抓num1.value
+            // 抓num2.value
+            // 抓opt.value
 
             result.innerText = resultValue;
             initFun();
             result.style.display = 'block';
-
-
-
         }
         function resetFun() {
             window.location.reload();
         }
-
-
-
-
-
-
-        // myBtn.innerText = 'NG';
         function 加Fun() {
-
             let num1Value = num1.value;
             let num2Value = num2.value;
             let optValue = opt.value;
@@ -199,11 +168,7 @@
                 alert('input error');
                 return false;
             }
-
-
-
-
-
+            // 數值1或數值2小於1，清空重來
             console.log('num1Value', num1Value);
             console.log('num1Value type =>', typeof (num1Value));
             console.log('num2Value', num2Value);
@@ -213,15 +178,10 @@
             console.log(resultValue);
             console.log('resultValue type =>', typeof (resultValue));
 
-            // result.innerText = '55688';
             result.innerText = resultValue;
-            // tip.style.display = 'none';
-            // result.style.display = 'block';
-
 
         }
         function 減Fun() {
-
             let num1Value = num1.value;
             let num2Value = num2.value;
             let optValue = opt.value;
@@ -229,7 +189,7 @@
                 alert('input error');
                 return false;
             }
-
+            // 數值1或數值2小於1，清空重來
             console.log('num1Value', num1Value);
             console.log('num1Value type =>', typeof (num1Value));
             console.log('num2Value', num2Value);
@@ -239,11 +199,7 @@
             console.log(resultValue);
             console.log('resultValue type =>', typeof (resultValue));
 
-            // result.innerText = '55688';
             result.innerText = resultValue;
-            // tip.style.display = 'none';
-            // result.style.display = 'block';
-
 
         }
         function 乘Fun() {
@@ -265,11 +221,7 @@
             console.log(resultValue);
             console.log('resultValue type =>', typeof (resultValue));
 
-            // result.innerText = '55688';
             result.innerText = resultValue;
-            // tip.style.display = 'none';
-            // result.style.display = 'block';
-
 
         }
         function 除Fun() {
@@ -291,11 +243,7 @@
             console.log(resultValue);
             console.log('resultValue type =>', typeof (resultValue));
 
-            // result.innerText = '55688';
             result.innerText = resultValue;
-            // tip.style.display = 'none';
-            // result.style.display = 'block';
-
 
         }
         let num1 = document.getElementById('num1');
@@ -312,24 +260,16 @@
         console.log('tip', tip);
         console.log('myBtn', myBtn);
 
-
+        // function reSetFun() {
+        //     console.log('resetFun ok');
+        //     清空tip、result
+        //     function initFun(){
+        //     顯示tip
         tip.style.display = 'block';
         result.style.display = 'block';
         result.style.display = 'none;'
-
-
-
-       
-            let 一FunValue = 1;
-                  console.log(一FunValue) + 1;
-
-
-
-
+        // }
     </script>
-
-
-
 </body>
 
 </html>
