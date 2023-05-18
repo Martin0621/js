@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            widows: 300px;
+            height: 300px;
+        }
+
+        .lightpink {
+            background-color: lightpink;
+        }
+
+        .lightblue {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <button id="myBtn">myBtn</button>
+    <br><br><br><br>
+    <div class="box lightblue" data-color="lightblue">
+
+    </div>
+    <script>
+        const myBtn = document.getElementById('myBtn');
+        const box = document.querySelector('.box');
+
+
+        myBtn.addEventListener('chick', function () {
+            console.log('click ok');
+            let getColor = box.getAttribute('data-color');
+            switch (getColor) {
+                case 'lightblue': arguments
+                    box.setAttribute('class', 'box lightpink')
+                    box.setAttribute('data-color', 'lightpink')
+                    break;
+                case 'lightpink': arguments
+                    box.setAttribute('class', 'box lightblue')
+                    box.setAttribute('data-color', 'lightblue')
+                    break;
+
+                default: break;
+            }
+
+
+
+            // box.setAttribute('class', 'box lightpink')
+        });
+    </script>
+
+
+
+</body>
+
+</html>
