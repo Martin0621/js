@@ -6,14 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .box {
+            width: 30%;
+            height: 300px;
+            background-color: lightblue;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+
     <script>
 
+        // 綁定　class -> querySelectorAll -> array.foreach(function(value,key))
+        const box = document.querySelectorAll('.box');
+        // const box = document.querySelector('.box');
+        console.log(box);
+
+        box.forEach(function (value, key) {
+            // .class  nodelist
+            console.log('value', value);
+            console.log('key', key);
+            value.style.backgroundColor = 'lightgreen';
+            value.addEventListener('click', function () {
+                console.log(`hello key${key}`);
+            });
+        });
+
+
+
+        // js array
         let myArr = ['amy', 'bob', 'cat'];
-
-
+        console.log('Array.isArray(myArr) => ', Array.isArray(myArr));
         myArr.forEach(function (value, key) {
             console.log('value', value);
             console.log('key', key);
@@ -21,9 +57,9 @@
 
     </script>
     <hr>
-    Js forEach要大寫 value, key 位置跟php不一樣
+    <h1>Js forEach要大寫 value, key 位置跟php不一樣
     <hr>
-    php foreach不用大寫 $key => $value 位置跟js不一樣
+    php foreach不用大寫 $key => $value 位置跟js不一樣</h1>
 
     <!-- 
 <?php 
