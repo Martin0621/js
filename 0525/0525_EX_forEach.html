@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 練習:假設發給員工
+        let myArr = [50, 100, 300, 20, 300, 55, 100, 200, 33];
+
+        // 1.       總營業額多少 1158     
+        let sum = 0;
+        myArr.forEach(function (value, key) {
+            sum = sum + value;
+            // return false; 相當continue;
+            // console.log('key', key);
+            // console.log('valuey', value);
+        });
+        console.log('sum', sum);
+
+        // 2. >=100 的營業額總共多少 1000
+        let sum100 = 0;
+        myArr.forEach(function (value) {
+            // if (value >= 100)
+            // 上下2種寫法都可以
+            if (value < 100)
+                return false
+
+            sum100 = sum100 + value;
+        });
+        console.log('sum100', sum100);
+
+        // 3. <100 的營業額總共多少 158
+        let sum99 = 0;
+        myArr.forEach(function (value) {
+            if (value < 100)
+                sum99 = sum99 + value;
+        });
+        console.log('sum99', sum99);
+
+        // 4.第一筆300 index 多少 ......break
+        let sum300 = 0;
+        myArr.forEach(function (value, key) {
+            if (value == 300 && sum300 == 0)
+                sum300 = sum300 + key + 1;
+        });
+        console.log('sum300位於', sum300, '欄');
+
+        // 老師用的方法
+        // let getIndexArr = [];
+        // myArr.forEach(function (value, key) {
+        //     if (value == 300) {
+        //         getIndexArr.push(key);
+        //     }
+        // });
+        // console.log('getIndexArr',getIndexArr);
+        // console.log('getIndexArr[0]',getIndexArr[0]);
+
+
+
+    </script>
+</body>
+
+</html>

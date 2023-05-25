@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="startBtn">startBtn</button>
+    <button type="button" id="stopBtn">stopBtn</button>
+    <p id="result">原本的文字</p>
+    <script>
+    
+        // 綁定
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const result = document.getElementById('result');
+
+        let time = 1000;
+        // 從1000開始倒數
+        startBtn.addEventListener('click', function () {
+            // setTimeout(function , 時間);
+            // setInterval(function , 時間);
+
+
+            //  按下時 倒數-  time - 1
+            let myInterVal = setInterval(function () {
+                time = time - 1;
+                result.innerText = time;
+                if (time <= 0) {
+                    clearInterval(myInterVal);
+                }
+                // console.log('myInterval ok');
+            }, 1000);
+
+            // 按下時 開始+  time + 1
+            // let myInterVal = setInterval(function () {
+            //     time = time + 1;
+            //     result.innerText = time;
+    
+            // }, 1000);
+
+
+
+        });
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
+
+<!-- // console.log('myBtn ok');
+// result.innerText = 'change ok';
+// setTimeout(function,秒數)
+// 1000 1秒 -->
