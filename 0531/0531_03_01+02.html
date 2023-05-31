@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid #ccf;
+            font-family: "標楷體";
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="color: #aa0000;text-decoration: underline;">
+        <em>TR elements define table rows</em>
+    </h3>
+    <table style="width: 100%" id="myTable">
+    
+    </table>
+    <script>
+
+        // 綁定
+        const myTable = document.getElementById('myTable');
+        // const td11 = document.getElementById('td11');
+        // const td12 = document.getElementById('td12');
+        // const td21 = document.getElementById('td21');
+        // const td22 = document.getElementById('td22');
+        // const td31 = document.getElementById('td31');
+        // const td32 = document.getElementById('td32');
+     
+        let myObj = {
+
+            's1': 'amy',
+            // :不是用=>  ,不是用;
+            's2': 'bob',
+            's3': 'cat',
+        }
+        console.log('顯示出來的S1-S3名字', myObj);
+        console.log('顯示出來的S1-S3名字["第一個座號s1名字"]', myObj['s1']);
+        console.log('顯示出來的S1-S3名字.第一個座號s1名字', myObj.s1);
+
+        // td11.innerText = 's1';
+        // td12.innerText = myObj.s1;
+        // td21.innerText = 's2';
+        // td22.innerText = myObj['s2'];
+        // td31.innerText = 's3';
+        // td32.innerText = myObj.s3;
+
+        myTable.innerHTML = 
+        `
+        <tr>
+            <th>座號</th>
+            <th>姓名</th>
+        </tr>
+        <tr>
+            <td id="td11">data1</td>
+            <td id="td12">data2</td>
+        </tr>
+        <tr>
+            <td id="td21">data2</td>
+            <td id="td22">data3</td>
+        </tr>
+        <tr>
+            <td id="td31">data4</td>
+            <td id="td32">data5</td>
+        </tr>
+        `;
+
+    </script>
+</body>
+
+</html>
