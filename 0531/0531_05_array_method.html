@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 篩選成年人
+        let ageArr = [20, 15, 30, 55, 10, 5, 25];
+        let newArr = [];
+        ageArr.forEach(function (value, key) {
+            if (value >= 18) {
+                newArr.push(value);
+            }
+        });
+        console.log('newArr', newArr);
+
+        // map
+        // return value
+
+        // filer
+        // filter return condition條件
+        // 如果條件達到 value丟過去
+        let filterArr = ageArr.filter(function (value, key) {
+            return value >= 18;
+        });
+        console.log('fitlerArr', filterArr);
+
+        // indexOf
+        // 抓到array key by value
+        let studentArr = ['amy', 'bob', 'cat', 'dog', 'egg'];
+        studentArr.forEach(function (value, key) {
+            if (value == 'dog') {
+                console.log(`key == ${key}`);
+                console.log(`value == ${value}`);
+            }
+        });
+        console.log('studentArr egg =>', studentArr.indexOf('egg'));
+
+
+
+        //sum
+        let numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        sum = 0;
+        numArr.forEach(function (value, key) {
+            sum += value;
+        });
+        console.log('sum', sum);
+
+        // reduce
+        // total 到下一回合的累加
+        // currentValue 我現在的value
+        // reuduce(function, 初始total)
+        // return 是一個value 不是array
+        // total(前) value total(後)
+        // 500         1       501
+        // 501         2       503
+        // 503         3       506
+        let getSum = numArr.reduce(function (total, value, key) {
+            console.log('total', total);
+            console.log('value', value);
+            return total + value;
+        }, 500);
+    </script>
+</body>
+
+</html>

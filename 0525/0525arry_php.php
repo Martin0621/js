@@ -73,22 +73,22 @@ foreach ($data as $key => $value) {
 
 <head>
     <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-        td,
-        th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
 
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
     </style>
 </head>
 
@@ -103,21 +103,21 @@ foreach ($data as $key => $value) {
             <th>mobile</th>
         </tr>
         <?php foreach ($data as $key => $value) : ?>
-            <tr>
-                <td><?= $value['id']; ?></td>
-                <td><?= $value['name']; ?></td>
-                <td><?= $value['mobile']; ?></td>
-            </tr>
+        <tr>
+            <td><?= $value['id']; ?></td>
+            <td><?= $value['name']; ?></td>
+            <td><?= $value['mobile']; ?></td>
+        </tr>
         <?php endforeach; ?>
 
         <?php
         foreach ($data as $key => $value) {
         ?>
-            <tr>
-                <td><?= $value['id']; ?></td>
-                <td><?= $value['name']; ?></td>
-                <td><?= $value['mobile']; ?></td>
-            </tr>
+        <tr>
+            <td><?= $value['id']; ?></td>
+            <td><?= $value['name']; ?></td>
+            <td><?= $value['mobile']; ?></td>
+        </tr>
         <?php
         }
         ?>
