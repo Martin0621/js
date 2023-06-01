@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="myByn">123</button>
+<script>
+
+    // 完整版有名子
+function good (){
+    console.log('good');
+}
+
+const myBtn = document.getElementById('myBtn');
+
+// 直接用 沒名子
+myBtn.addEventListener('click',function(){
+    console.log('myBtn ok');
+})
+good();
+
+// 再簡化版，function用胖箭頭
+myBtn.addEventListener('click',(value, key) => {
+    console.log('myBtn ok');
+})
+
+array.forEach(element => {});
+
+
+</script>
+
+
+
+
+</body>
+</html>
