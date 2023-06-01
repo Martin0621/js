@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- // 胖箭頭的左邊/參數，右變/值
+    // **************右變 參數 => 左邊 值************ -->
+    <h1> arrow funciton 箭頭函式</h1>
+    <button type="button" id="myBtn">myBtn</button>
+    <script>
+        // 原先完整版有名子
+        function good() {
+            console.log('good');
+        }
+        const myBtn = document.getElementById('myBtn');
+        // 直接用 沒名子
+        myBtn.addEventListener('click', function () {
+            console.log('一般函式');
+        })
+        good();
+        // 再簡化版，function省略改成用arrow胖箭頭，()內如果只有一個參數，可以不用括號，二個以上的話，要用括號;()內如果沒東西，還是要用()。
+        myBtn.addEventListener('click', (value, key) => {
+            console.log('使用胖箭頭的箭頭函式');
+        })
+
+        // Ex
+        // let myArr = [1, 2, 3, 4, 5];
+
+        // 一、原本使用的方式
+        // let mapArr = myArr.map(function (value, key) {
+        //     return value * 2;
+        // });
+        // console.log('mapArr', mapArrr);
+
+        // 二、使用箭頭函式簡化
+        // let mapArrowArr = myArr.map((value, key) => (value * 2));
+        // console.log('mapArrowArr', mapArrowArr);
+        // console.log('this', this);
+        // 在箭頭函式使用this太廣了，包含整個window，故盡量不要直接使用，要變成id使用。
+
+    </script>
+
+
+
+
+</body>
+
+</html>

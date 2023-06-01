@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="normalBtn">一般函式</button>
+    <button type="button" id="arrowBtn">箭頭函式</button>
+    <script>
+
+        // arrow funciton
+        // 箭頭函式
+
+        function good() {
+        console.log('good');
+        }
+
+        const normalBtn = document.getElementById('normalBtn');
+        const arrowBtn = document.getElementById('arrowBtn');
+        normalBtn.addEventListener('click', function () {
+        console.log('原本的function');
+        console.log('this', this);
+
+        })
+
+        arrowBtn.addEventListener('click', () => {
+        console.log('myBtn ok arrow function');
+        console.log('this', this);
+        // 在箭頭函式使用this太廣了
+        console.log('arrowBtn', arrowBtn);
+        })
+
+
+    </script>
+</body>
+
+</html>
