@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+        }
+
+        .box-hidden {
+            display: none;
+        }
+
+        .box-show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="p-3 m-0 border-0 bd-example m-0 border-0">
+
+    <button type="button" id="myBtn" class="btn btn-outline-primary">Primary</button>
+    <button type="button" id="myBtn" class="btn btn-outline-secondary">Secondary</button>
+    <button type="button" id="myBtn" class="btn btn-outline-success">Success</button>
+    <button type="button" id="myBtn" class="btn btn-outline-danger">Danger</button>
+    <button type="button" id="myBtn" class="btn btn-outline-warning">Warning</button>
+    <button type="button" id="myBtn" class="btn btn-outline-info">Info</button>
+    <button type="button" id="myBtn" class="btn btn-outline-light">Light</button>
+    <button type="button" id="myBtn" class="btn btn-outline-dark">Dark</button>
+    <div class="box box-hidden" id="box">
+    <button type="button" id="myBtn">myBtn</button>
+      </div>
+
+
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- <script>
+        $(document).ready(function () {
+            $("#myBtn").click(function () {
+                $("#box").toggleClass("main");
+            });
+        });
+    </script> -->
+
+    <script>
+        const myBtn = document.getElementById('myBtn');
+        const box = document.getElementById('box');
+
+        myBtn.addEventListener('click', function () {
+            let dataHiddenVaule = box.getAttribute('data-hidden');
+            if (dataHiddenVaule > 0) {
+                box.setAttribute('class', 'box box-hidden');
+                box.setAttribute('data-hidden', '0');
+            } else {
+                box.setAttribute('class', 'box box-show');
+                box.setAttribute('data-hidden', '1');
+            }
+        });
+
+    </script>
+
+
+
+
+    <!-- Example Code -->
+
+
+
+
+
+    <!-- End Example Code -->
+</body>
+
+</html>
