@@ -9,15 +9,19 @@
 </head>
 
 <body>
-           <div class="">
-            <label for="A">A</label>
-            <input type="text" id="A" value="">
-        </div>
-        <div class="">
-            <label for="B">B</label>
-            <input type="text" id="B" value="">
-        </div>
-            <button type="button" id="myBtn" onclick="myFun()">GET-BTN</button>
+    <div class="">
+        <label for="a">C</label>
+        <input type="text" id="a" value="">
+    </div>
+    <div class="">
+        <label for="A">A</label>
+        <input type="text" id="A" value="">
+    </div>
+    <div class="">
+        <label for="B">B</label>
+        <input type="text" id="B" value="">
+    </div>
+    <button type="button" id="myBtn" onclick="myFun()">GET-BTN</button>
     <HR>
     <P id="result">
         結果是....
@@ -28,21 +32,24 @@
         // mobileText = document.getElementById('mobile').value '0911-222-333';
 
         // get
+        let a = document.getElementById('a')
         let A = document.getElementById('A');
         let B = document.getElementById('B');
         let myBtn = document.getElementById('myBtn');
         let resul = document.getElementById('resul');
         function myFun() {
-            let AValue = 10;
+            let aValue = 1;
+            let AValue = 1000;
             let BValue = 200;
             // console.log('myFun');
+            console.log(a);
             console.log(A);
             console.log(B);
             // result.innerText = `${ATextValue} ${BTextValue}`;
-            result.innerText = ` ${BValue}`;
+            result.innerText = `${aValue}-${AValue}- ${BValue}`;
         }
 
-        
+
 
 
 

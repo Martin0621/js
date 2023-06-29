@@ -65,5 +65,16 @@
 
     </script>
 </body>
+<script type="text/javascript">
+    function ChangeFontColor(){
+        let O_1=document.getElementById("StringFont_1").innerHTML;
+        let O_2=document.getElementById("StringFont_2").innerText;
+        document.getElementById("StringFont_1").innerHTML='<font color="red">'+O_1+'</font>';
+        document.getElementById("StringFont_2").innerHTML=O_2;
+    }
+    </script>
+    <p id="StringFont_1">透過 innerHTML 將文字變色</p>
+    <p id="StringFont_2"><font color='blue'>透過 innerText 將文字變為黑色</font></p>
+    <input type="button" value="變更文字顏色" onclick="ChangeFontColor()">
 
 </html>
